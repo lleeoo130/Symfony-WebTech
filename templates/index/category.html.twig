@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% set active = category.slug %}
+
 {% block page_title %}
     {{ category.name | title }}
 {% endblock %}

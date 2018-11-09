@@ -60,4 +60,9 @@ class ArticleController extends Controller
                             . $member->getFirstName()
             );
     }
+
+    public function newArticle()
+    {
+        
+    }
 }

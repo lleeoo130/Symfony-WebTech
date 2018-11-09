@@ -2,9 +2,9 @@
 <nav class="menu-res hidden-lg hidden-md ">
     <div class="menu-res-inner">
         <ul>
-            <li><a href=" {{ path('index') }}">HOME</a></li>
+            <li {{ active == 'index' ? "class='current'" }}><a href="{{ path('index') }}">HOME</a></li>
             {% for category in categories %}
-                <li>
+                <li {{ active == category.slug ? "class='current'" }} }  >
                     <a href="{{ path('index_category', {category: category.slug}) }}">{{ category.name }}</a>
                 </li>
             {% endfor %}
@@ -30,9 +30,9 @@
                 <span>MENU</span>
             </div>
             <ul class="hidden-sm hidden-xs">
-                <li><a href=" {{ path('index') }}">HOME</a></li>
+                <li {{ active == 'index' ? "class='current'" }}><a href=" {{ path('index') }}">HOME</a></li>
                 {% for category in categories %}
-                    <li>
+                    <li {{ active == category.slug ? "class='current'" }} }  >
                         <a href="{{ path('index_category', {category: category.slug}) }}">{{ category.name }}</a>
                     </li>
                 {% endfor %}
