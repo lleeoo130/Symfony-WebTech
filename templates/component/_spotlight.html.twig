@@ -1,0 +1,25 @@
+<div>
+    <spotlight class="spotlight-item">
+        <div class="spotlight-img">
+            <img alt="" src="{{ asset('images/product/'~ spotlight.featuredImage) }}" class="img-responsive" />
+            <a href=" {{ path('index_category', {'category': spotlight.category.slug }) }} " class="cate-tag"> {{ spotlight.category.name }}</a>
+        </div>
+        <div class="spotlight-item-caption">
+            <h2 class="font-heading">
+                <a href=" {{ path('index_article', {'category': spotlight.category.slug, 'slug': spotlight.slug, 'id': spotlight.id}) }} ">
+                    {{ spotlight.title | title}}
+                </a>
+            </h2>
+            <div class="meta-post">
+                <a href="#">
+                    {{ spotlight.author.firstName ~ ' ' ~ spotlight.author.lastName }}
+                </a>
+                <em></em>
+                <span>
+                    {{ spotlight.dateCreation | date("d/m/Y") }}
+                </span>
+            </div>
+            <p>{{ spotlight.content | summary | raw }}</p>
+        </div>
+    </spotlight>
+</div>

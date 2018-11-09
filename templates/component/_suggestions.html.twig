@@ -1,0 +1,18 @@
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="spotlight-item-thumb">
+        <div class="spotlight-item-thumb-img">
+            <a href="#">
+                <img alt="" src="{{ asset('images/product/'~ suggestion.featuredImage  ) }}">
+            </a>
+            <a href="#" class="cate-tag">{{ suggestion.category.name }}</a>
+        </div>
+        <h3><a href="{{ path('index_article', {'category': suggestion.category.slug, 'slug': suggestion.slug, 'id': suggestion.id}) }}">{{ suggestion.title }}</a></h3>
+        <div class="meta-post">
+            <a href="#">
+                {{ suggestion.author.firstname ~' '~ suggestion.author.lastname }}
+            </a>
+            <em></em>
+            <span>{{ suggestion.datecreation | date('d/m/Y') }}</span>
+        </div>
+    </div>
+</div>

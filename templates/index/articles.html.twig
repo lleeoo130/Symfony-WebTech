@@ -1,0 +1,99 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block page_title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+        <!--colleft-->
+        <div class="col-md-8 col-sm-12">
+            <!--post-detail-->
+            <article class="post-detail">
+                <h1> {{ article.title }}</h1>
+                <div class="meta-post">
+                    <a href="#">
+                        {{ article.author.firstname ~' '~ article.author.lastname }}
+                    </a>
+                    <em></em>
+                    <span>{{ article.datecreation | date('d/m/Y')  }}</span>
+                </div>
+
+                {{ article.content | raw }}
+
+                <p>
+                    <img alt="" src="{{ asset('images/product/'~ article.featuredImage  ) }}" class="post-detail-img-left" />
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid aperiam doloremque et fugiat perspiciatis soluta! Error laudantium maiores necessitatibus sunt totam? A ab ad aspernatur cupiditate deserunt dolores eligendi explicabo, fugiat hic id illo illum neque omnis pariatur perspiciatis quia reiciendis rem saepe, tempora temporibus totam unde vero, voluptatibus!</p>
+                <h5 class="text-right font-heading"><strong>{{ article.author.firstname ~' '~ article.author.lastname }}</strong> </h5>
+
+
+            </article>
+            <!--social-detail-->
+            <div class="social-detail">
+                <span>   Share article</span>
+
+                <ul class="list-social-icon">
+                    <li>
+                        <a href="#" class="facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="google">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="youtube">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="pinterest">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="rss">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!--related post-->
+            <div class="detail-caption">
+                <span>RELATED POST</span>
+            </div>
+            <section class="spotlight-thumbs spotlight-thumbs-related">
+                <div class="row">
+
+                    {% if suggestions is not empty %}
+                        {% for suggestion in suggestions %}
+                            {{ include('component/_suggestions.html.twig') }}
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+            </section>
+        </div>
+
+        {% include 'component/_sidebar.html.twig' %}
+    </div>
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,52 @@
+data:
+
+  article1 :
+    id : 1
+    titre : 'Donald did it again'
+    contenu : '<p>CONTENU</p>'
+    featuredimage : '3.jpg'
+    special : false
+    spotlight : true
+    datecreation : 2017-02-26 09:37:18
+    categorie:
+      id : 1
+      libelle : 'Politics'
+    auteur:
+        id : 1
+        prenom : 'Leo'
+        nom : 'R'
+        email : 'leo@leo.com.au'
+
+  article2 :
+    id : 2
+    titre : 'Macron is in da house'
+    contenu : '<p>CONTENU</p>'
+    featuredimage : '2.jpg'
+    special : false
+    spotlight : true
+    datecreation : 2017-02-26 09:37:19
+    categorie:
+      id : 2
+      libelle : 'Politics'
+    auteur:
+        id : 1
+        prenom : 'Leo'
+        nom : 'R'
+        email : 'leo@leo.com.au'
+
+  article3 :
+    id : 3
+    titre : 'Troisieme article'
+    contenu : '<p>CONTENU</p>'
+    featuredimage : '1.jpg'
+    special : true
+    spotlight : false
+    datecreation : 2017-02-26 09:37:19
+    categorie:
+      id : 2
+      libelle : 'Creativity'
+    auteur:
+      id : 1
+      prenom : 'Leo'
+      nom : 'R'
+      email : 'leo@leo.com.au'
