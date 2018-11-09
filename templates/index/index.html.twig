@@ -40,7 +40,7 @@
     </div>
 
 {# Sidebar #}
-    {% include 'component/_sidebar.html.twig' %}
-
+    {#    {% include 'component/_sidebar.html.twig' %}#}
+{{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
 {% endblock %}
 

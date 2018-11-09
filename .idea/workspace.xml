@@ -2,128 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adfca1af-c3fd-48cc-84b7-4acb96d8f760" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/techNews.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/debug.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/easy_log_handler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/font-awesome.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/main.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/normalize.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/owl.carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/scss/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/ads.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/apple-touch-icon-114x114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/apple-touch-icon-57x57.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/apple-touch-icon-72x72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/avatar1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/avatar2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logo_footer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/product/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.matchHeight.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Article/Provider/YamlProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Article/Provider/articles.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/TechNews/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/TechNews/IndexController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/Twig/AppExtension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/_footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/_nav.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/_sidebar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/_spotlight-thumb.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/_spotlight.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/component/_suggestions.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index/articles.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index/category.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/component/sidebar/last_articles.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/component/sidebar/specials.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/component/social_media.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/component/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/component/_sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +67,7 @@
           <entry key="html" value="9" />
           <entry key="php" value="47" />
           <entry key="sql" value="1" />
-          <entry key="twig" value="68" />
+          <entry key="twig" value="82" />
           <entry key="yaml" value="7" />
         </counts>
       </usages-collector>
@@ -191,7 +77,7 @@
           <entry key="HTML" value="9" />
           <entry key="PHP" value="47" />
           <entry key="Scratch" value="1" />
-          <entry key="Twig" value="68" />
+          <entry key="Twig" value="82" />
           <entry key="YAML" value="7" />
         </counts>
       </usages-collector>
@@ -199,7 +85,7 @@
         <counts>
           <entry key="env" value="26" />
           <entry key="php" value="5252" />
-          <entry key="twig" value="3671" />
+          <entry key="twig" value="4113" />
           <entry key="txt" value="27" />
           <entry key="yaml" value="499" />
         </counts>
@@ -210,7 +96,7 @@
           <entry key="HTML" value="3" />
           <entry key="PHP" value="5249" />
           <entry key="PLAIN_TEXT" value="27" />
-          <entry key="Twig" value="3671" />
+          <entry key="Twig" value="4113" />
           <entry key="YAML" value="499" />
         </counts>
       </usages-collector>
@@ -226,24 +112,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TechNews/IndexController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-              <folding>
-                <element signature="e#46#84#0#PHP" expanded="true" />
-                <element signature="e#3136#3166#1#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/component/_sidebar.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state>
+              <caret column="15" selection-start-column="15" selection-end-column="15" />
+              <folding>
+                <element signature="e#791#823#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -253,14 +129,18 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>getid</find>
-      <find>article</find>
       <find>asse</find>
       <find>asset</find>
       <find>path</find>
       <find>categ</find>
+      <find>spotlight</find>
+      <find>article</find>
+      <find>en ava</find>
     </findStrings>
     <replaceStrings>
       <replace>spotlight</replace>
+      <replace>special</replace>
+      <replace>article</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -284,17 +164,21 @@
         <option value="$PROJECT_DIR$/src/Controller/TechNews/ArticleController.php" />
         <option value="$PROJECT_DIR$/src/Repository/ArticleRepository.php" />
         <option value="$PROJECT_DIR$/templates/component/_suggestions.html.twig" />
-        <option value="$PROJECT_DIR$/templates/index/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/component/_spotlight-thumb.twig" />
         <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/src/Repository/CategoryRepository.php" />
         <option value="$PROJECT_DIR$/templates/component/_nav.html.twig" />
-        <option value="$PROJECT_DIR$/templates/index/articles.html.twig" />
         <option value="$PROJECT_DIR$/templates/component/_spotlight.html.twig" />
         <option value="$PROJECT_DIR$/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/Service/Twig/AppExtension.php" />
-        <option value="$PROJECT_DIR$/templates/index/category.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/TechNews/IndexController.php" />
+        <option value="$PROJECT_DIR$/templates/index/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/index/category.html.twig" />
+        <option value="$PROJECT_DIR$/templates/index/articles.html.twig" />
+        <option value="$PROJECT_DIR$/templates/component/sidebar/last_articles.html.twig" />
+        <option value="$PROJECT_DIR$/templates/component/component/sidebar/specials.html.twig" />
+        <option value="$PROJECT_DIR$/templates/component/sidebar/specials.html.twig" />
+        <option value="$PROJECT_DIR$/templates/component/social_media.html.twig" />
         <option value="$PROJECT_DIR$/templates/component/_sidebar.html.twig" />
       </list>
     </option>
@@ -441,6 +325,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Leo\Symfony\techNews\templates\component\sidebar" />
+      <recent name="C:\wamp64\www\Leo\Symfony\techNews\templates\component\component" />
+      <recent name="C:\wamp64\www\Leo\Symfony\techNews\templates\component" />
+      <recent name="C:\wamp64\www\Leo\Symfony\techNews\templates\component\component\sidebar" />
       <recent name="C:\wamp64\www\Leo\Symfony\techNews\src\Controller\TechNews" />
     </key>
   </component>
@@ -468,12 +356,12 @@
       <updated>1541582896992</updated>
       <workItem from="1541582900178" duration="23767000" />
       <workItem from="1541668636143" duration="27332000" />
-      <workItem from="1541758279656" duration="3152000" />
+      <workItem from="1541758279656" duration="5110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54251000" />
+    <option name="totallyTimeSpent" value="56209000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,13 +389,34 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4978678" visible="true" weight="0.3373102" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4978678" weight="0.3373102" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5021322" side_tool="true" weight="0.4197397" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.61985815" visible="true" weight="0.14285715" />
+      <window_info id="Structure" order="1" sideWeight="0.38014185" side_tool="true" weight="0.18017058" />
+      <window_info id="Favorites" order="2" sideWeight="0.38014185" side_tool="true" weight="0.18017058" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.329718" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4978678" visible="true" weight="0.3373102" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5021322" side_tool="true" weight="0.4197397" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -631,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -713,50 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index/articles.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/component/_spotlight.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index/category.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/Twig/AppExtension.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="73">
@@ -778,10 +636,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index/category.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index/articles.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/component/_spotlight.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="136" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/component/sidebar/specials.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/component/sidebar/last_articles.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/component/social_media.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/component/_sidebar.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+          <folding>
+            <element signature="e#791#823#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

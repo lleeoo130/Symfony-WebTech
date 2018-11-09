@@ -57,18 +57,7 @@
             </div>
 
         </div>
-            {% include 'component/_sidebar.html.twig' %}
-
-
-
-
-
-
-
-
-
-
-
+            {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
 
 
 {% endblock %}

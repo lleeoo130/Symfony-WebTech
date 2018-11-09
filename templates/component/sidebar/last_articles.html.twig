@@ -1,0 +1,11 @@
+<li>
+    <a href="{{ path('index_article', {'category': article.category.slug, 'slug': article.slug, 'id': article.id}) }}">
+        <img alt="" src="{{ asset('images/product/'~ article.featuredImage  ) }}">
+    </a>
+    <h3><a href="{{ path('index_article', {'category': article.category.slug, 'slug': article.slug, 'id': article.id}) }}">{{ article.title }}</a></h3>
+    <div class="meta-post">
+        <a href="#">{{ article.author.firstname ~' '~ article.author.lastname }}</a>
+        <em></em>
+        <span>{{ article.datecreation |date('d/m/Y') }}</span>
+    </div>
+</li>

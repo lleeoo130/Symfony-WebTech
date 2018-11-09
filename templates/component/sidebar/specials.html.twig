@@ -1,0 +1,14 @@
+<special class="news-two-large">
+    <a href="{{ path('index_article', {'category': special.category.slug, 'slug': special.slug, 'id': special.id}) }}">
+        <img alt="" src="{{ asset('images/product/4.jpg') }}">
+    </a>
+    <h3><a href="{{ path('index_article', {'category': special.category.slug, 'slug': special.slug, 'id': special.id}) }}">{{ special.title }}</a></h3>
+    <div class="meta-post">
+        <a href="#">
+            {{ special.author.firstname ~' '~ special.author.lastname }}
+        </a>
+        <em></em>
+        <span>{{ special.datecreation |date('d/m/Y') }}</span>
+    </div>
+
+</special>
