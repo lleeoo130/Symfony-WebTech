@@ -6,7 +6,15 @@ namespace App\Controller\TechNews;
 use App\Entity\Article;
 use App\Entity\Category;
 use App\Entity\Member;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -35,7 +43,7 @@ class ArticleController extends Controller
         $article = new Article();
         $article->setTitle("WF3 in urge to buy new video-projector");
         $article->setSlug("wf3-in-urge-to-buy-a-new-video-projector");
-        $article->setContent("<p>It's finally about timethat whe buy a new video projector for Nicolas' formation.</p>");
+        $article->setContent("<p>It's finally about time that we bought a new video projector for Nicolas' class.</p>");
         $article->setFeaturedImage("7.jpg");
         $article->setSpecial(0);
         $article->setSpotlight(1);
@@ -61,8 +69,79 @@ class ArticleController extends Controller
             );
     }
 
+    /**
+     * Form to add an article
+     *
+     * @Route("/create-new-article",
+     *          name="article_new")
+     */
     public function newArticle()
     {
-        
+
+        # Getting an author | or session
+        $member = $this ->getDoctrine()->getRepository(Member::class)
+                        ->find(1);
+
+        # Creating an article
+        $article = new Article();
+        $article->setAuthor($member);
+
+        # Creating a form to add an article
+        $form = $this->createFormBuilder($article)
+                     ->add('title', TextType::class, [
+                                    'required'      => true,
+                                    'label'         => "Article Title",
+                                    'attr'          => [
+                                            'placeholder'   => "Article Title"
+                                    ],
+                         ])
+                    ->add('content', CKEditorType::class, [
+                                    'required'      => true,
+                                    'label'         => false,
+                        ])
+                    ->add('featuredImage', FileType::class, [
+                                    'required'      => true,
+                                    'label'         => "Featured Image",
+                                    'attr'          => ['class' => 'dropify']
+                        ])
+                    ->add('special', CheckboxType::class, [
+                                    'required'      => false,
+                                    'attr'          => [
+                                        'data-toggle'   =>  'toggle',
+                                        'data-on'       =>  'Yes',
+                                        'data-off'      =>  'No',
+                                    ]
+                        ])
+                    ->add('spotlight', CheckboxType::class, [
+                                    'required'      => false,
+                                    'attr'          => [
+                                        'data-toggle'   =>  'toggle',
+                                        'data-on'       =>  'Yes',
+                                        'data-off'      =>  'No',
+                                    ]
+                        ])
+                    ->add('category', EntityType::class, [
+                                    'class'         => Category::class,
+                                    'choice_label'  => 'name'
+                        ])
+                    ->add('author', EntityType::class, [
+                                    'class'         => Member::class,
+                                    'choice_label'  => function($member){
+                                                            return $member->getFullName();
+                                                    },
+                    ])
+                    ->add('New Author', ButtonType::class, [
+                                        'attr'      => ['class'=>'btn-info'],
+                        ])
+                    ->add('Save Article', SubmitType::class, [
+                                        'attr'      => ['class'=>'btn-success']
+                        ])
+
+                ->getForm();
+
+        # Displaying the form
+        return $this->render('article/form.html.twig', [
+            'form'  => $form->createView()
+        ]);
     }
 }

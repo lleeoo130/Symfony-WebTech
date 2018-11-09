@@ -64,6 +64,11 @@ class Member
         $this->dateRegistration = new \DateTime();
     }
 
+    public function getFullName()
+    {
+        return $this->getFirstName().' '.$this->getLastName();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
