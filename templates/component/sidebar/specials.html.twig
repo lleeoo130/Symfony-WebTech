@@ -1,6 +1,7 @@
 <special class="news-two-large">
+
     <a href="{{ path('index_article', {'category': special.category.slug, 'slug': special.slug, 'id': special.id}) }}">
-        <img alt="" src="{{ asset('images/product/4.jpg') }}">
+        <img alt="" src="{{ asset( 'images/product/'~special.featuredImage ) }}">
     </a>
     <h3><a href="{{ path('index_article', {'category': special.category.slug, 'slug': special.slug, 'id': special.id}) }}">{{ special.title }}</a></h3>
     <div class="meta-post">

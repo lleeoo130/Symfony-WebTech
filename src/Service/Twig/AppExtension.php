@@ -46,7 +46,7 @@ class AppExtension extends AbstractExtension
                     $content = substr($contentCut, 0, strrpos($contentCut, ' ')) . '...';
                 }
                 return $content;
-            })
+            }, ['is_safe' => ['html']])
         ];
     }
 

@@ -15,9 +15,14 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class ArticleController
+ * @package App\Controller\TechNews
+ */
 class ArticleController extends Controller
 {
     /**
@@ -74,8 +79,10 @@ class ArticleController extends Controller
      *
      * @Route("/create-new-article",
      *          name="article_new")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function newArticle()
+    public function newArticle(Request $request)
     {
 
         # Getting an author | or session
@@ -138,6 +145,39 @@ class ArticleController extends Controller
                         ])
 
                 ->getForm();
+
+        # Handling POST data
+        $form->handleRequest($request);
+
+        # Checking forms's data
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            # Getting the data:
+            $article = $form->getData();
+
+            # Handling the image upload
+            $article->uploadImage();
+
+            # Updating slug
+            $article->setSlug();
+
+            # Saving in Doctrine
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($article);
+            $em->flush();
+
+            # Flash Message:
+            $this->addFlash('notice',
+                'Congrats! You\'re article is now online');
+
+            # Redirecting to article
+            return $this->redirectToRoute('index_article', [
+                "category"  => $article->getCategory()->getSlug(),
+                "slug"      => $article->getSlug(),
+                "id"        => $article->getId()
+            ]);
+
+        }
 
         # Displaying the form
         return $this->render('article/form.html.twig', [

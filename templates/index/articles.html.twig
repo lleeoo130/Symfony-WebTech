@@ -1,5 +1,6 @@
 {% extends 'layout.html.twig' %}
 
+{% set active = article.category.slug %}
 
 {% block page_title %}
     {{ article.title }}
@@ -11,6 +12,13 @@
     <div class="row">
         <!--colleft-->
         <div class="col-md-8 col-sm-12">
+
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-info">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
             <!--post-detail-->
             <article class="post-detail">
                 <h1> {{ article.title }}</h1>
