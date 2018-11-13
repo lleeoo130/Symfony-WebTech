@@ -2,7 +2,6 @@
 
 namespace App\Article;
 
-
 use App\Entity\Article;
 
 
