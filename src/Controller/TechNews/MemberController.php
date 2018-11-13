@@ -42,7 +42,7 @@ class MemberController extends Controller
             $this->addFlash('notice', 'Congrats, you are now registered!');
 
             # Redirecting:
-            $this->redirectToRoute('index');
+            $this->redirectToRoute('security_login');
         }
 
         # Displaying the form:

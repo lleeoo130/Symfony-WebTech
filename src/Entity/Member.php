@@ -177,7 +177,7 @@ class Member implements UserInterface
 
     public function getRoles()
     {
-        return null;
+        return $this->getRole();
     }
 
     public function getSalt()

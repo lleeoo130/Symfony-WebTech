@@ -4,6 +4,10 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: ~ }
+        member_provider:
+            entity:
+                class: App\Entity\Member
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -16,7 +20,16 @@ security:
             # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
-            # form_login: true
+            form_login:
+                login_path: security_login
+                check_path: security_login
+                username_parameter: app_login[email]
+                password_parameter: app_login[password]
+                default_target_path: index
+            provider: member_provider
+            logout:
+                path: /logout
+                target: /
             # https://symfony.com/doc/current/security/form_login_setup.html
 
     # Easy way to control access for large sections of your site
@@ -24,3 +37,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
+    role_hierarchy:
+        ROLE_AUTHOR: ROLE_MEMBER
+        ROLE_EDITOR: ROLE_AUTHOR
+        ROLE_ADMIN: ROLE_EDITOR

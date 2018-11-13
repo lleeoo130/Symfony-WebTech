@@ -9,6 +9,7 @@ use App\Article\ArticleType;
 use App\Entity\Article;
 use App\Entity\Category;
 use App\Entity\Member;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -74,6 +75,7 @@ class ArticleController extends Controller
      *
      * @Route("/create-new-article",
      *          name="article_new")
+     * @Security("has_role('ROLE_AUTHOR')")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
@@ -81,8 +83,7 @@ class ArticleController extends Controller
     {
 
         # Getting an author | or session
-        $member = $this ->getDoctrine()->getRepository(Member::class)
-                        ->find(1);
+        $member = $this ->getUser();
 
         # Creating an article
         # $article = new Article();
@@ -119,6 +120,30 @@ class ArticleController extends Controller
         # Displaying the form
         return $this->render('article/form.html.twig', [
             'form'  => $form->createView()
+        ]);
+    }
+
+
+    /**
+     * @Route("edit-article/{id<\d+>}",
+     *          name="article_edit")
+     * @param Request $request
+     * @return string
+     */
+    public function editArticle(Request $request)
+    {
+        $member = $this->getUser();
+
+        $articleToEdit = $this->getDoctrine()->getRepository(Article::class)->find(2);
+
+        $articleRequestToEdit = new ArticleRequest($member);
+
+        $form = $this   ->createForm(ArticleType::class, $articleRequestToEdit)
+                        ->handleRequest($request);
+
+
+        return $this->render('article/form.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 }
