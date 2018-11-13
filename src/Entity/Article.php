@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
@@ -62,20 +61,39 @@ class Article
     private $author;
 
 
-
-
     /**
      * @ORM\Column(type="datetime")
      */
     private $dateCreation;
 
-    const PATH_TO_IMAGE_FOLDER = __DIR__.'\..\..\public\images\product';
 
-
-    public function __construct()
+    /**
+     * Article constructor.
+     * @param $id
+     * @param $title
+     * @param $slug
+     * @param $content
+     * @param $featuredImage
+     * @param $special
+     * @param $spotlight
+     * @param $category
+     * @param $author
+     * @param $dateCreation
+     */
+    public function __construct($id = null, $title, $slug, $content, $featuredImage, $special, $spotlight, $category, $author, $dateCreation)
     {
-        $this->dateCreation = new \DateTime();
+        $this->id = $id;
+        $this->title = $title;
+        $this->slug = $slug;
+        $this->content = $content;
+        $this->featuredImage = $featuredImage;
+        $this->special = $special;
+        $this->spotlight = $spotlight;
+        $this->category = $category;
+        $this->author = $author;
+        $this->dateCreation = $dateCreation;
     }
+
 
     public function getId(): ?int
     {
@@ -99,9 +117,9 @@ class Article
         return (string)$this->slug;
     }
 
-    public function setSlug()
+    public function setSlug($slug)
     {
-        $this->slug = self::slugify($this->getTitle());
+        $this->slug = $slug;
     }
 
     public function getContent(): ?string
@@ -127,21 +145,6 @@ class Article
         $this->featuredImage = $featuredImage;
     }
 
-    public function uploadImage()
-    {
-        if (null === $this->getFeaturedImage()) {
-            return;
-        }
-
-        $this->setSlug();
-        $imageName = $this->getSlug()."_".$this->getFeaturedImage()->getClientOriginalName();
-
-        $this->getFeaturedImage()->move(
-            self::PATH_TO_IMAGE_FOLDER,
-            $imageName
-        );
-        $this->setFeaturedImage($imageName);
-    }
 
     public function getSpecial(): ?bool
     {
@@ -210,33 +213,5 @@ class Article
     {
         $this->author = $author;
     }
-
-    public static function slugify($text)
-    {
-        // replace non letter or digits by -
-        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
-
-        // transliterate
-        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-
-        // remove unwanted characters
-        $text = preg_replace('~[^-\w]+~', '', $text);
-
-        // trim
-        $text = trim($text, '-');
-
-        // remove duplicate -
-        $text = preg_replace('~-+~', '-', $text);
-
-        // lowercase
-        $text = strtolower($text);
-
-        if (empty($text)) {
-            return 'n-a';
-        }
-
-        return $text;
-    }
-
 
 }

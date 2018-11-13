@@ -3,18 +3,13 @@
 namespace App\Controller\TechNews;
 
 
+use App\Article\ArticleRequest;
+use App\Article\ArticleRequestHandler;
+use App\Article\ArticleType;
 use App\Entity\Article;
 use App\Entity\Category;
 use App\Entity\Member;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -82,7 +77,7 @@ class ArticleController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function newArticle(Request $request)
+    public function newArticle(Request $request, ArticleRequestHandler $articleRequestHandler)
     {
 
         # Getting an author | or session
@@ -90,81 +85,23 @@ class ArticleController extends Controller
                         ->find(1);
 
         # Creating an article
-        $article = new Article();
-        $article->setAuthor($member);
+        # $article = new Article();
+        # $article->setAuthor($member);
+        $article = new ArticleRequest($member);
+
 
         # Creating a form to add an article
-        $form = $this->createFormBuilder($article)
-                     ->add('title', TextType::class, [
-                                    'required'      => true,
-                                    'label'         => "Article Title",
-                                    'attr'          => [
-                                            'placeholder'   => "Article Title"
-                                    ],
-                         ])
-                    ->add('content', CKEditorType::class, [
-                                    'required'      => true,
-                                    'label'         => false,
-                        ])
-                    ->add('featuredImage', FileType::class, [
-                                    'required'      => true,
-                                    'label'         => "Featured Image",
-                                    'attr'          => ['class' => 'dropify']
-                        ])
-                    ->add('special', CheckboxType::class, [
-                                    'required'      => false,
-                                    'attr'          => [
-                                        'data-toggle'   =>  'toggle',
-                                        'data-on'       =>  'Yes',
-                                        'data-off'      =>  'No',
-                                    ]
-                        ])
-                    ->add('spotlight', CheckboxType::class, [
-                                    'required'      => false,
-                                    'attr'          => [
-                                        'data-toggle'   =>  'toggle',
-                                        'data-on'       =>  'Yes',
-                                        'data-off'      =>  'No',
-                                    ]
-                        ])
-                    ->add('category', EntityType::class, [
-                                    'class'         => Category::class,
-                                    'choice_label'  => 'name'
-                        ])
-                    ->add('author', EntityType::class, [
-                                    'class'         => Member::class,
-                                    'choice_label'  => function($member){
-                                                            return $member->getFullName();
-                                                    },
-                    ])
-                    ->add('New Author', ButtonType::class, [
-                                        'attr'      => ['class'=>'btn-info'],
-                        ])
-                    ->add('Save Article', SubmitType::class, [
-                                        'attr'      => ['class'=>'btn-success']
-                        ])
-
-                ->getForm();
+        $form = $this   ->createForm(ArticleType::class, $article)
+                        ->handleRequest($request);
 
         # Handling POST data
-        $form->handleRequest($request);
+        /*$form->handleRequest($request);*/
 
         # Checking forms's data
         if ($form->isSubmitted() && $form->isValid())
         {
-            # Getting the data:
-            $article = $form->getData();
 
-            # Handling the image upload
-            $article->uploadImage();
-
-            # Updating slug
-            $article->setSlug();
-
-            # Saving in Doctrine
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($article);
-            $em->flush();
+            $article = $articleRequestHandler->handle($article);
 
             # Flash Message:
             $this->addFlash('notice',
