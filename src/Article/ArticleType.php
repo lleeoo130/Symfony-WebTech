@@ -21,6 +21,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ArticleType extends AbstractType
 {
+
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -40,7 +42,10 @@ class ArticleType extends AbstractType
             ->add('featuredImage', FileType::class, [
                 'required'      => true,
                 'label'         => "Featured Image",
-                'attr'          => ['class' => 'dropify']
+                'attr'          => [
+                                    'class'             => 'dropify',
+                                    'data-default-type' => $options['img_url']
+                                    ]
             ])
             ->add('special', CheckboxType::class, [
                 'required'      => false,
@@ -81,7 +86,8 @@ class ArticleType extends AbstractType
     {
         $resolver->setDefaults([
             # 'data_class' => Article::class,
-            'data_class' => ArticleRequest::class
+            'data_class' => ArticleRequest::class,
+            'img_url'    => null
             ]);
     }
 

@@ -94,6 +94,25 @@ class Article
         $this->dateCreation = $dateCreation;
     }
 
+    public function update(
+        string $title,
+        string $slug,
+        string $content,
+        string $featuredImage,
+        bool $special,
+        bool $spotlight,
+        Category $category
+    )
+    {
+        $this->title = $title;
+        $this->slug  = $slug;
+        $this->content = $content;
+        $this->featuredImage = $featuredImage;
+        $this->special      = $special;
+        $this->spotlight    = $spotlight;
+        $this->category     = $category;
+    }
+
 
     public function getId(): ?int
     {

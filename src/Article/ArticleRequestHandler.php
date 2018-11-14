@@ -10,6 +10,7 @@ class ArticleRequestHandler
 {
     private $em, $articleFactory;
 
+
     public function __construct(EntityManagerInterface $em, ArticleFactory $articleFactory)
     {
         $this->em = $em;
@@ -35,4 +36,5 @@ class ArticleRequestHandler
 
         return $article;
     }
+
 }
