@@ -140,9 +140,9 @@ class Member implements UserInterface
         return $this->dateLastConnection;
     }
 
-    public function setDateLastConnection(\DateTimeInterface $dateLastConnection): self
+    public function setDateLastConnection(string $timestamp = 'now'): self
     {
-        $this->dateLastConnection = $dateLastConnection;
+        $this->dateLastConnection = new \DateTime($timestamp);
 
         return $this;
     }

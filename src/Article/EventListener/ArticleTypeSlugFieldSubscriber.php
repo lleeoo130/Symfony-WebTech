@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Article\EvenListener;
+namespace App\Article\EventListener;
 
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

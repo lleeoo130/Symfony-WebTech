@@ -42,3 +42,4 @@ security:
         ROLE_AUTHOR: ROLE_MEMBER
         ROLE_EDITOR: ROLE_AUTHOR
         ROLE_ADMIN: ROLE_EDITOR
+

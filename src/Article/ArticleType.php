@@ -3,7 +3,7 @@
 namespace App\Article;
 
 
-use App\Article\EvenListener\ArticleTypeSlugFieldSubscriber;
+use App\Article\EventListener\ArticleTypeSlugFieldSubscriber;
 use App\Entity\Article;
 use App\Entity\Category;
 use App\Entity\Member;

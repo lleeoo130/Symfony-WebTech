@@ -35,3 +35,4 @@ services:
     App\Article\ArticleRequestUpdateHandler:
         arguments:
             $articleAssetsDir: '%articles_assets_dir%'
+

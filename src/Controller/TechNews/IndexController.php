@@ -3,8 +3,6 @@
 
 namespace App\Controller\TechNews;
 
-
-
 use App\Article\Provider\YamlProvider;
 use App\Entity\Article;
 use App\Entity\Category;
@@ -82,7 +80,6 @@ class IndexController extends Controller
         $suggestions = $this->getDoctrine()
                             ->getRepository(Article::class)
                             ->findArticlesSuggestions($article->getId(), $article->getCategory()->getId());
-
 
 
         return $this->render("index/articles.html.twig", [
