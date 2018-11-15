@@ -93,9 +93,10 @@ class IndexController extends Controller
 
 
     /**
+     * @param Article|null $article
      * @return Response
      */
-    public function sidebar()
+    public function sidebar(?Article $article = null)
     {
         # Getting the repository:
         $articleRepository = $this->getDoctrine()->getRepository(Article::class);
@@ -109,7 +110,8 @@ class IndexController extends Controller
         # Returning the view
         return $this->render('component/_sidebar.html.twig', [
             'articles' => $articles,
-            'specials' => $specials
+            'specials' => $specials,
+            'article' => $article
         ]);
     }
 

@@ -114,7 +114,7 @@ class ArticleRequest
 
     public function setSlug()
     {
-        $this->slug = self::slugify($this->getTitle());
+        return $this->slug = self::slugify($this->getTitle());
     }
 
     /**

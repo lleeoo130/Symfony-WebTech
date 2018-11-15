@@ -3,6 +3,7 @@
 namespace App\Article;
 
 
+use App\Article\EvenListener\ArticleTypeSlugFieldSubscriber;
 use App\Entity\Article;
 use App\Entity\Category;
 use App\Entity\Member;
@@ -76,9 +77,11 @@ class ArticleType extends AbstractType
             ->add('New Author', ButtonType::class, [
                 'attr'      => ['class'=>'btn-info'],
             ])
-            ->add('Save Article', SubmitType::class, [
+            ->add('save', SubmitType::class, [
+                'label'     =>  'Save Article',
                 'attr'      => ['class'=>'btn-success']
-            ]);
+            ])
+            ->addEventSubscriber( new ArticleTypeSlugFieldSubscriber());
 
     }
 

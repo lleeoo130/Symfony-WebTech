@@ -105,7 +105,9 @@
             </section>
         </div>
 
-        {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
+        {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar', {
+            'article' : article
+        })) }}
 
     </div>
 
