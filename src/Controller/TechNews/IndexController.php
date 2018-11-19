@@ -15,9 +15,14 @@ class IndexController extends Controller
 
     /**
      *  Our website's index page.
+     * @Route("/{_locale}",
+     *          name="index")
+     * @return Response
      */
     public function index()
     {
+
+
         // getting the articles from YamlProvider
         $articles = $this->getDoctrine()->getRepository(Article::class)->findLatestArticles();
 
@@ -35,7 +40,7 @@ class IndexController extends Controller
 
     /**
      *  Page showing the articles of a category.
-     * @Route("/category/{category<\w+>}",
+     * @Route("/{_locale}/category/{category<\w+>}",
      *          name="index_category",
      *          methods={"GET"},
      *          requirements={},
@@ -59,7 +64,7 @@ class IndexController extends Controller
 
     /**
      * Display an article
-     * @Route("/{category<\w+>}/{slug}_{id<\d+>}.html",
+     * @Route("/{_locale}/{category<\w+>}/{slug}_{id<\d+>}.html",
      *          name="index_article")
      * @param Article $article
      * @return Response
@@ -87,7 +92,6 @@ class IndexController extends Controller
             'suggestions'   => $suggestions,
         ]);
     }
-
 
     /**
      * @param Article|null $article

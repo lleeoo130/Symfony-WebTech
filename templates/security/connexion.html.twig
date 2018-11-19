@@ -1,9 +1,10 @@
 {% extends "layout.html.twig" %}
 
 {% set active = "login" %}
+{% trans_default_domain 'security' %}
 
 {% block page_title %}
-    Login
+    {{ 'security.login' | trans }}
 {% endblock %}
 
 
@@ -11,7 +12,7 @@
     <div class="row">
         <div class="col-xs-6 col-xs-push-3">
             <h2 class="text-center">
-                Login
+                {{ 'security.login' | trans }}
             </h2>
 
             {% if error %}

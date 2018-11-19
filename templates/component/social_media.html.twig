@@ -1,16 +1,16 @@
 {% block social_medias %}
     <!-- subcribe box-->
     <div class="subcribe-box">
-        <h3>NEWSLETTER</h3>
-        <p>Inscrivez-vous pour recevoir nos dernières publications.</p>
-        <input type="text" placeholder="Votre Email..." />
-        <button class="my-btn">Je m'inscris</button>
+        <h3>{{ 'sidebar.newsletter' | trans }}</h3>
+        <p>{% trans %}Register to the Newsletter to receive our latest news{% endtrans %}</p>
+        <input type="text" placeholder="{{ 'sidebar.subscribe.placeholder' | trans }}" />
+        <button class="my-btn">{{ 'sidebar.subscribe.btn' | trans }}</button>
     </div>
     <!-- connect us-->
     <div class="connect-us">
         <div class="widget-title">
 			<span>
-				SUIVEZ-NOUS
+				{{ 'sidebar.followus' | trans }}
 			</span>
         </div>
         <ul class="list-social-icon">

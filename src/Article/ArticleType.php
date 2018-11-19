@@ -45,7 +45,7 @@ class ArticleType extends AbstractType
                 'label'         => "Featured Image",
                 'attr'          => [
                                     'class'             => 'dropify',
-                                    'data-default-type' => $options['img_url']
+                                    'data-default-file' => $options['img_url']
                                     ]
             ])
             ->add('special', CheckboxType::class, [

@@ -28,7 +28,7 @@ security:
                 default_target_path: index
             provider: member_provider
             logout:
-                path: /logout
+                path: security_logout
                 target: /
             # https://symfony.com/doc/current/security/form_login_setup.html
 

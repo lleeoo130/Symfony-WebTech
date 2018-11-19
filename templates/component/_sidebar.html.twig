@@ -1,32 +1,30 @@
 <!--colright-->
 
+{% trans_default_domain 'sidebar' %}
+
 <div class="col-md-4 col-sm-12">
 
 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
         <h3 class="text-center">
-            Hey {{ app.user.firstname }}
+            {{ 'sidebar.hello' | trans }} {{ app.user.firstname }}!
         </h3>
-        <p class="text-center"> Connected last: {{ app.user.datelastconnection | date('d/m/Y') }}</p>
+        <p class="text-center"> {{ 'sidebar.connectedsince' | trans }}: {{ app.user.datelastconnection | date('d/m/Y') }}</p>
 
         <h4 class="text-center">
             {% if is_granted('ROLE_ADMIN') %}
-                Admin
+                {% trans from 'roles' %}role.admin{% endtrans %}
             {% elseif is_granted('ROLE_AUTHOR') %}
-                Author
+                {% trans from 'roles' %}role.author{% endtrans %}
             {% elseif is_granted('ROLE_EDITOR') %}
-                Editor
+                {% trans from 'roles' %}role.editor{% endtrans %}
             {% else %}
-                Member
+                {% trans from 'roles' %}role.member{% endtrans %}
             {% endif %}
         </h4>
 
         <ul class="list-group">
-
-
-            {% dump(article) %}
-
 
             {%  if article is defined
                 and article
@@ -35,7 +33,7 @@
 
                 <li class="list-group-item">
                     <a href=" {{ path('article_edit', {id : article.id}) }} ">
-                        Edit article
+                        {% trans from 'articles' %}articles.edit{% endtrans %}
                     </a>
                 </li>
             {% endif %}
@@ -44,7 +42,7 @@
             {% if is_granted('ROLE_AUTHOR') %}
                 <li class="list-group-item">
                     <a href=" {{ path('article_new') }} ">
-                        Write an article
+                        {% trans from 'articles' %}articles.create{% endtrans %}
                     </a>
                 </li>
             {% endif %}
@@ -52,7 +50,7 @@
 
                 <li class="list-group-item">
                     <a href=" {{ path('security_logout') }} ">
-                        Logout
+                        {% trans from 'nav' %}nav.logout{% endtrans %}
                     </a>
                 </li>
         </ul>
@@ -63,7 +61,7 @@
     <ul role="tablist" class="tab-popular">
         <li class="active">
             <a href="#tab1" role="tab" data-toggle="tab">
-                DERNI&Egrave;RE PUBLICATIONS
+                {{ 'sidebar.lastarticles' | trans }}
             </a>
         </li>
     </ul>
@@ -90,7 +88,7 @@
     <div class="connect-us">
         <div class="widget-title">
 			<span>
-				En Avant
+				{{ 'sidebar.toparticles' | trans }}
 			</span>
         </div>
         <div class="list-special">

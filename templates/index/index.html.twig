@@ -2,10 +2,11 @@
 
 
 {% set active = 'index' %}
+{% trans_default_domain 'articles' %}
 
 
 {% block page_title %}
-    Acceuil
+    {{ 'articles.home' | trans }}
 {% endblock %}
 
 
@@ -20,7 +21,7 @@
     <!--colleft-->
     <div class="col-md-8 col-sm-12">
         <div class="box-caption">
-            <span>spotlight</span>
+            <span>{{ 'article.share' | trans }}</span>
         </div>
         <!--sportlight-->
         <section class="owl-carousel owl-spotlight">

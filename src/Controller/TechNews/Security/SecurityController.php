@@ -14,7 +14,8 @@ class SecurityController extends Controller
 {
 
     /**
-     * @Route("/login",
+     * @Route({"en":"/{_locale}/login",
+     *        "fr": "/{_locale}/connexion"},
      *          name="security_login")
      * @param Request $request
      * @param AuthenticationUtils $authenticationUtils
@@ -43,12 +44,13 @@ class SecurityController extends Controller
     }
 
     /**
-     * @Route("/logout",
+     * @Route({"en":"/{_locale}/logout",
+     *         "fr":"/{_locale}/deconnexion"},
      *     name="security_logout")
      */
     public function logout()
     {
-
+        $this->redirectToRoute('index');
     }
 
     /*

@@ -27,14 +27,15 @@ class ArticleTypeSlugFieldSubscriber implements EventSubscriberInterface
         $form       = $event->getForm();
 
         # Making sure there's a slug
-        if (null !== $article->getSlug())
+        dump($article->getSlug());
+        if (null != $article->getSlug())
         {
             # Adding slug input:
             $form->add('slug', TextType::class, [
-                                                'label' => 'Article\'s slug',
-                                                'attr'  =>  [
-                                                    'placeholder' => "Article's slug"
-                                                ]
+                'label' => 'Article\'s slug',
+                'attr'  =>  [
+                    'placeholder' => "Article's slug"
+                ]
             ]);
         }
     }

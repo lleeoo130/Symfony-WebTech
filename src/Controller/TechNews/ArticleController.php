@@ -75,8 +75,10 @@ class ArticleController extends Controller
     /**
      * Form to add an article
      *
-     * @Route("/create-new-article",
-     *          name="article_new")
+     * @Route({
+     *     "en": "/{_locale}/create-an-article",
+     *     "fr": "/{_locale}/creer-un-article"
+     * }, name="article_new")
      * @Security("has_role('ROLE_AUTHOR')")
      * @param Request $request
      * @param ArticleRequestHandler $articleRequestHandler
@@ -128,7 +130,8 @@ class ArticleController extends Controller
 
 
     /**
-     * @Route("edit-article/{id<\d+>}",
+     * @Route({"en":"/{_locale}/edit-article/{id<\d+>}",
+     *          "fr":"/{_locale}/editer-article"},
      *          name="article_edit")
      * @Security("has_role('ROLE_AUTHOR')")
      * @param Article $article

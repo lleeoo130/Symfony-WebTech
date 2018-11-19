@@ -1,15 +1,16 @@
 {% extends "layout.html.twig" %}
 
 {% set active = 'registration' %}
+{% trans_default_domain 'security' %}
 
 {% block title %}
-    Registration
+    {{ 'security.registration' | trans }}
 {% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
-            <h3>Register here</h3>
+            <h3>{{ 'security.registerhere' | trans }}</h3>
             {{ form(form) }}
         </div>
     </div>

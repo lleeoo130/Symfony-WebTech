@@ -1,6 +1,8 @@
 {% extends 'layout.html.twig' %}
 
 {% set active = article.category.slug %}
+{% trans_default_domain 'articles' %}
+
 
 {% block page_title %}
     {{ article.title }}
@@ -21,15 +23,7 @@
             {% endfor %}
             <!--post-detail-->
             <article class="post-detail">
-                <h1> {{ article.title }}</h1>
-
-                {% if is_granted('ROLE_AUTHOR') %}
-                    <ul>
-                        <li>
-                            <a href="{{ path('article_edit', { 'id' : article.id}) }}">Edit this article</a>
-                        </li>
-                    </ul>
-                {% endif %}
+                <h1>{{ article.title }}</h1>
 
                 <div class="meta-post">
                     <a href="#">
@@ -51,7 +45,7 @@
 
             <!--social-detail-->
             <div class="social-detail">
-                <span>   Share article</span>
+                <span>{{ 'articles.share' | trans }}</span>
 
                 <ul class="list-social-icon">
                     <li>
@@ -90,7 +84,7 @@
 
             <!--related post-->
             <div class="detail-caption">
-                <span>RELATED POST</span>
+                <span>{{ 'articles.relatedpost' | trans }}</span>
             </div>
             <section class="spotlight-thumbs spotlight-thumbs-related">
                 <div class="row">
@@ -108,9 +102,7 @@
         {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar', {
             'article' : article
         })) }}
-
     </div>
-
 
 
 {% endblock %}

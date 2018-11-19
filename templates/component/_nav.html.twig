@@ -1,8 +1,12 @@
 <!--menu mobile-->
+
+
+{% trans_default_domain 'nav' %}
+
 <nav class="menu-res hidden-lg hidden-md ">
     <div class="menu-res-inner">
         <ul>
-            <li {{ active == 'index' ? "class='current'" }}><a href="{{ path('index') }}">HOME</a></li>
+            <li {{ active == 'index' ? "class='current'" }}><a href="{{ path('index') }}">{{ 'nav.home' | trans }}</a></li>
             {% for category in categories %}
                 <li {{ active == category.slug ? "class='current'" }} }  >
                     <a href="{{ path('index_category', {category: category.slug}) }}">{{ category.name }}</a>
@@ -27,10 +31,10 @@
         <nav class="menu font-heading">
             <div class="menu-icon hidden-lg hidden-md">
                 <i class="fa fa-navicon"></i>
-                <span>MENU</span>
+                <span>{{ 'nav.menu' | trans }}}</span>
             </div>
             <ul class="hidden-sm hidden-xs">
-                <li {{ active == 'index' ? "class='current'" }}><a href=" {{ path('index') }}">HOME</a></li>
+                <li {{ active == 'index' ? "class='current'" }}><a href=" {{ path('index') }}">{{ 'nav.home' | trans }}</a></li>
 
                 {% for category in categories %}
                     <li {{ active == category.slug ? "class='current'" }} }  >
@@ -39,17 +43,16 @@
                 {% endfor %}
 
 
-
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <li>
-                        <a href="{{ path('security_logout') }}">Logout</a>
+                        <a href="{{ path('security_logout') }}">{{ 'nav.logout' | trans }}</a>
                     </li>
                 {% else %}
                     <li {{ active == 'login' ? "class='current'" }}>
-                        <a href="{{ path('security_login') }}">Login</a>
+                        <a href="{{ path('security_login') }}">{{ 'nav.login' | trans }}</a>
                     </li>
                     <li {{ active == 'registration' ? "class='current'" }}>
-                        <a href="{{ path('member_registration') }}">Register</a>
+                        <a href="{{ path('member_registration') }}">{{ 'nav.register' | trans }}</a>
                     </li>
                 {% endif %}
 
@@ -61,8 +64,8 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="search-box">
-                    <input type="text" placeholder="Rechercher..." />
-                    <button>Lancer</button>
+                    <input type="text" placeholder="{{ 'nav.search.placeholder' | trans }}..." />
+                    <button>{{ 'nav.search.button' | trans }}</button>
                 </div>
             </div>
         </nav>
