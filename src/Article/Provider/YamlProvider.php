@@ -7,11 +7,11 @@ use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
 
+
 class YamlProvider
 {
 
     private $kernel;
-
 
     /**
      * YamlProvider constructor.
@@ -31,8 +31,7 @@ class YamlProvider
                 $this->kernel->getCacheDir() . '/yaml-articles.php'
         ));
 
-        return $articles['data'];
+        return $articles;
     }
-
 
 }

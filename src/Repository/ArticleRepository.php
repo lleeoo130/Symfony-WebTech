@@ -4,12 +4,12 @@ namespace App\Repository;
 
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
  * @method Article|null findOneBy(array $criteria, array $orderBy = null)
- * @method Article[]    findAll()
  * @method Article[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class ArticleRepository extends ServiceEntityRepository
@@ -22,6 +22,14 @@ class ArticleRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Article::class);
+    }
+
+    /**
+     * @return Article[]
+     */
+    public function getArticles()
+    {
+        return $this->findAll();
     }
 
 
@@ -82,6 +90,21 @@ class ArticleRepository extends ServiceEntityRepository
                     ->setParameter('true', true)
                     ->getQuery()
                     ->getResult();
+    }
+
+
+    public function countArticles()
+    {
+        try{
+            return $this->createQueryBuilder('a')
+                        ->select('COUNT(a)')
+                        ->getQuery()
+                        ->getSingleScalarResult();
+        } catch (NonUniqueResultException $e)
+        {
+            return 0;
+        }
+
     }
 
 

@@ -3,9 +3,11 @@
 
 namespace App\Controller\TechNews;
 
+use App\Article\DataArticles\ArticleCatalogue;
 use App\Article\Provider\YamlProvider;
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Exception\DuplicateCatalogueArticleException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,14 +19,14 @@ class IndexController extends Controller
      *  Our website's index page.
      * @Route("/{_locale}",
      *          name="index")
+     * @param ArticleCatalogue $catalogue
      * @return Response
      */
-    public function index()
+    public function index(ArticleCatalogue $catalogue)
     {
-
-
         // getting the articles from YamlProvider
-        $articles = $this->getDoctrine()->getRepository(Article::class)->findLatestArticles();
+        $articles = $catalogue->findAll();
+
 
         $spotlights = $this->getDoctrine()->getRepository(Article::class)->findSpotlightArticles();
 
@@ -66,20 +68,28 @@ class IndexController extends Controller
      * Display an article
      * @Route("/{_locale}/{category<\w+>}/{slug}_{id<\d+>}.html",
      *          name="index_article")
-     * @param Article $article
+     * @param ArticleCatalogue $catalogue
+     * @param $id
      * @return Response
      */
-    public function articles(Article $article = null)
+    public function articles(ArticleCatalogue $catalogue, $id)
     {
         /*$article = $this->getDoctrine()
                         ->getRepository(Article::class)
                         ->find($id);*/
 
-        if (null === $article)
+        /*if (null === $article)
         {
-            /*throw $this->createNotFoundException('Article id:'.$id.' not found');*/
+            throw $this->createNotFoundException('Article id:'.$id.' not found');
 
              return $this->redirectToRoute('index', [], Response::HTTP_MOVED_PERMANENTLY);
+        }
+        */
+
+        try{
+            $article = $catalogue->find($id);
+        } catch (DuplicateCatalogueArticleException $e){
+            return $this->redirectToRoute('index', [], Response::HTTP_MOVED_PERMANENTLY);
         }
 
         $suggestions = $this->getDoctrine()
@@ -95,15 +105,18 @@ class IndexController extends Controller
 
     /**
      * @param Article|null $article
+     * @param ArticleCatalogue $catalogue
      * @return Response
      */
-    public function sidebar(?Article $article = null)
+    public function sidebar(?Article $article = null, ArticleCatalogue $catalogue)
     {
         # Getting the repository:
         $articleRepository = $this->getDoctrine()->getRepository(Article::class);
 
         # Getting the latest articles
-        $articles = $articleRepository->findLatestArticles();
+        $articles = $catalogue->findLatestArticles();
+
+        dump($articles);
 
         # Getting the special articles
         $specials = $articleRepository->findSpecialArticles();

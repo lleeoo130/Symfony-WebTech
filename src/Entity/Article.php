@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
-class Article
+class Article implements \ArrayAccess
 {
     /**
      * @ORM\Id()
@@ -93,6 +93,27 @@ class Article
         $this->author = $author;
         $this->dateCreation = $dateCreation;
     }
+
+    public function offsetExists($offset)
+    {
+        // TODO: Implement offsetExists() method.
+    }
+
+    public function offsetGet($offset)
+    {
+        // TODO: Implement offsetGet() method.
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        // TODO: Implement offsetSet() method.
+    }
+
+    public function offsetUnset($offset)
+    {
+        // TODO: Implement offsetUnset() method.
+    }
+
 
     public function update(
         string $title,
@@ -194,7 +215,7 @@ class Article
         return $this->dateCreation;
     }
 
-    public function setDateCreation(\DateTimeInterface $dateCreation): self
+    public function setDateCreation($dateCreation): self
     {
         $this->dateCreation = $dateCreation;
 

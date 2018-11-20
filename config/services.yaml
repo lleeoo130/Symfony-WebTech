@@ -36,3 +36,25 @@ services:
         arguments:
             $articleAssetsDir: '%articles_assets_dir%'
 
+    #
+    # App\Article\DataArticles\ArticleCatalogue:
+    #    calls:
+    #        - ['addSource', ['@App\Article\DataArticles\YamlSource']]
+    #        - ['addSource', ['@App\Article\DataArticles\DoctrineSource']]
+
+    # App\Article\DataArticles\YamlSource:
+    #   tags:
+    #        - app.article_source
+
+    # App\Article\DataArticles\DoctrineSource:
+    #    tags:
+    #        - app.article_source
+
+    _instanceof:
+        App\Article\DataArticles\ArticleAbstractSource:
+            tags:
+                - app.article_source
+
+    # App\Article\DataArticles\ArticleCatalogue:
+    #    calls:
+    #        - ['setSources', [!tagged app.article_source]]
